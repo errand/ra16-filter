@@ -1,8 +1,8 @@
 export default function ProjectList(props) {
-  const {img, category} = props;
+  const {item} = props;
   return (
-    <div>
-      {img}
+    <div data-id={item.id} data-category={item.category}>
+      <img src={item.img} alt=""  />
     </div>
       )
 }
