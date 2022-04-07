@@ -34,11 +34,9 @@ export default class Portfolio extends React.Component {
     //item: PropTypes.instanceOf(Project).isRequired
   }
 
-  onSelectFilter(evt) {
-    //this.setState(prevState => ({filters: prevState.filters + 1}));
-    console.log(evt)
+  onFilterToggle = item => {
+    console.log(item)
   }
-
 
   render () {
     const {filters, selected, projects} = this.state;
@@ -47,7 +45,7 @@ export default class Portfolio extends React.Component {
         <Toolbar
           filters={filters}
           selected={selected}
-          onSelectFilter={(filter) => {console.log(filter);}}/>
+          onSelectFilter={this.onFilterToggle}/>
           <ProjectList props={projects} />
       </div>
     )
